@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>DracMemory |  Login</title>
+</head>
+<body>
+
+    <video autoplay muted loop>
+        <source src="danca-galinha.mp4" type="video/mp4">
+        Seu navegador não suporta o elemento de vídeo.
+    </video>
+    <main>
+        <div class="caixa-botao">
+            <ul>
+                <li><a target="_blank" href="https://instagram.com/dracarys.robots"><i class="fa-brands fa fa-instagram"></i></a></li>
+                <li><a targer= "_blank" href="#"><i class="fa-brands fa fa-whatsapp" ></i></a></li>
+                <li><a target="_blank" href="https://open.spotify.com/show/5GF4tmUvaSrwV84DnsZLRt"><i class="fa-brands fa fa-spotify" ></i></a></li>
+            </ul>
+        </div>
+
+        <form class="login-forms">
+            <div class="login-header">
+                <!-- <img src="https://img.freepik.com/vetores-premium/pixel-art-de-um-cerebro_759447-1049.jpg" alt="brain icon"> -->
+                <h1>DracMemory</h1>
+            </div>  
+        </form>
+        
+        <div class="caixa-botao">
+            <button onclick="redirecionarGame('game-galinha.js')" class="login-button" >Dança da Galinha</button>
+            <button onclick="redirecionarGame('game-olha-onda.js')"  class="login-button" >Olha a Onda</button>
+            <button onclick="redirecionarGame('game-maozinha.js')"  class="login-button" >Dança da Mãozinha</button>
+        </div>
+    </main>
+</body>
+</html>
+
+<script>
+function redirecionarGame(scriptName) {
+            window.location.href = 'game2.html?script=' + scriptName;
+        }    
+</script>

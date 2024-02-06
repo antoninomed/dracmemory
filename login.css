@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap');
+
+body {
+    background-color: black;
+    overflow: hidden; /* Para remover as barras de rolagem padrão do navegador */
+
+}
+
+main {
+    position: relative;
+    z-index: 1;
+    margin: 3% 10% 0% 10%;
+    padding: 1%;
+    border-radius: 20px;
+    background-color: #00000099;
+    height:auto;
+}
+.login-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Redimensiona o vídeo para cobrir completamente o contêiner */
+    opacity: 80%;
+}
+
+.caixa-botao {
+    width: 100%;
+    margin-top: 2%;
+    display: flex;
+    justify-content: center;
+}
+
+.login-forms {
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5%;
+}
+
+
+
+.login-header img {
+    width: 250px;
+}
+
+.login-header h1 {
+    color: #ff0606;
+    font-size: 1.5em;
+}
+
+.login-input {
+    width: 100%;
+    max-width: 300px;
+    border: 2px solid #0d0d0d;
+    border-radius: 9px / 9px ;
+    color: #0d0d0d;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    outline: none;
+    padding: 5px;
+}
+
+.login-button {
+    width: fit-content;
+    max-width: 300px;
+    background-color: #ffffff45;
+    color: #ffffffe7;
+    padding: 15px;
+    border-radius: 10px / 10px;
+    font-size: 1.5vw;
+    cursor: pointer;
+    margin-left: 2%;
+
+}
+
+.login-button:disabled {
+    background-color: #eee;
+    color: #aaa;
+    cursor: auto;
+}
+
+.login-button:hover {
+    transform: scale(1.04);
+    background: red;
+    color: white;
+}
+
+
+ul {
+    position: relative;
+    display: flex;
+}
+ul li {
+    position: relative;
+    list-style: none;
+    margin: 0 20px;
+    cursor: pointer;
+}
+ul li a {
+    text-decoration: none;
+}
+ul li a .fa-brands {
+    font-size: 2em;
+    color: #958c8c;
+    margin-top: 1vh;
+}
+ul li a::before {
+    font-family: "FontAwesome";
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 2em;
+    height: 0;
+    overflow: hidden;
+    transition: 0.5s ease-in-out;
+}
+ul li:nth-child(1) a::before {
+    content: "\f16d";
+    /*background-image: linear-gradient(45deg, 
+      #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,
+      #bc1888 100%);
+    -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;*/
+    color: #dc2743;
+    border-bottom: 4px solid #dc2743;
+}
+ul li:nth-child(2) a::before {
+    content: "\f232";
+    color: #dc2743;
+    border-bottom: 4px solid #dc2743;
+}
+ul li:nth-child(3) a::before {
+    content: "\f1bc";
+    color: #dc2743;
+    border-bottom: 4px solid #dc2743;
+}
+
+ul li:hover a::before {
+    margin-top: 1vh;
+    height: 100%;
+
+}

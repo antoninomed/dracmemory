@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="game.css">
+    <script defer src="game-default.js"></script>
+    <title>Memory Game</title>
+</head>
+<body>
+
+    <main>
+        <a href="index.html"><button class="btn-voltar">Voltar ⇠</button></a>
+        
+       <header>
+        <div class="caixa-musica">    
+        <span class="musica-atual">Chicken Dance</span>
+        <audio id="audioPlayer" controls autoplay>
+                <source src="" type="audio/mpeg">
+            </audio>
+        </div>
+
+            <span class="player"></span>
+            <span>Tempo: <span class="timer">00</span>
+            </span>
+        </header>
+    
+       <div id="grid-cards" class="grid"></div>
+    </main>
+
+    <div id="notificacaoPlay" class="modal">
+    <div class="modal-content">
+        <h3 id="texto-acerto"></h3>
+        <img class="img-modal" src="" alt="Primeira Carta" id="primeiraCartaImg">
+        <img class="img-modal" src="" alt="Segunda Carta" id="segundaCartaImg">
+    </br>
+        <span class="btn-close" onclick="closeModal()" >&times;</span>
+
+    </div>
+</div>
+
+</body>
+</html>
+
+<script>
+function closeModal() {
+        document.getElementById('notificacaoPlay').style.display = 'none';
+    }
+
+
+var parametros = new URLSearchParams(window.location.search);
+var scriptParametro = parametros.get('script');
+
+// Se houver um parâmetro 'script', altera o src do script defer
+if (scriptParametro) {
+    var scriptElement = document.createElement('script');
+    scriptElement.src = scriptParametro;
+    document.head.appendChild(scriptElement);
+}
+
+</script>
