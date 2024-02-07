@@ -1,5 +1,7 @@
 const grid = document.querySelector('.grid');
 const spanPlayer = document.querySelector('.player');
+const spanMusica = document.querySelector('.musica-atual');
+
 
 const audioPlayer = document.getElementById('audioPlayer');
 
@@ -159,6 +161,8 @@ const startTime = () => {
 
 window.onload = () => {
     spanPlayer.innerHTML = localStorage.getItem('player');
+    spanMusica.innerHTML = 'Dança da Mãozinha';
+    
     startTime();
     loadGame();
 }

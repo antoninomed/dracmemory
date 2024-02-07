@@ -3,6 +3,9 @@ const spanPlayer = document.querySelector('.player');
 
 const audioPlayer = document.getElementById('audioPlayer');
 
+const spanMusica = document.querySelector('.musica-atual');
+
+
 audioPlayer.src = 'olha-onda.mp3';
 
 
@@ -155,6 +158,7 @@ const startTime = () => {
 
 window.onload = () => {
     spanPlayer.innerHTML = localStorage.getItem('player');
+    spanMusica.innerHTML = 'Dança da Mãozinha';
     startTime();
     loadGame();
 }

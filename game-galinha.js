@@ -1,5 +1,6 @@
 const grid = document.querySelector('.grid');
 const spanPlayer = document.querySelector('.player');
+const spanMusica = document.querySelector('.musica-atual');
 
 const audioPlayer = document.getElementById('audioPlayer');
 
@@ -39,7 +40,8 @@ let secondCard = '';
 const checkEndGame = () => {
     const disabledCards = document.querySelectorAll('.disabled-card');
 
-    if(disabledCards.length == 20) {
+    if(disabledCards.length == 2) {
+        //==characters.length*2
         clearInterval(this.loop);
 
         alert(`Parabéns, ${spanPlayer.innerHTML}! Seu tempo foi: ${timer.innerHTML} segundos`);
@@ -170,6 +172,7 @@ const startTime = () => {
 
 window.onload = () => {
     spanPlayer.innerHTML = localStorage.getItem('player');
+    spanMusica.innerHTML = 'Chicken Dance';
     startTime();
     loadGame();
 }
