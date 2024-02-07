@@ -40,7 +40,7 @@ let secondCard = '';
 const checkEndGame = () => {
     const disabledCards = document.querySelectorAll('.disabled-card');
 
-    if(disabledCards.length == 2) {
+    if(disabledCards.length == characters.length*2) {
         //==characters.length*2
         clearInterval(this.loop);
 
