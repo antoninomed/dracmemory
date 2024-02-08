@@ -4,15 +4,13 @@ const spanMusica = document.querySelector('.musica-atual');
 
 const audioPlayer = document.getElementById('audioPlayer');
 
-audioPlayer.src = 'musica-galinha.mp3';
 
 let tentativas = 0;
 
 const notificacaoPlay = document.getElementById('notificacaoPlay');
 //const txtNotificacao = notificacaoPlay.querySelector('h3');
-audioPlayer.loop = true;
-audioPlayer.style.display = 'block';
-audioPlayer.play();
+
+
 
 const timer = document.querySelector('.timer')
 const characters = [
@@ -52,6 +50,8 @@ const checkCards = () => {
     const firstCharacter = firstCard.getAttribute('data-character');
     const secondCharacter = secondCard.getAttribute('data-character');
 
+    
+
     document.getElementById('primeiraCartaImg').src = 'imagens/'+firstCharacter+'.gif';
     document.getElementById('segundaCartaImg').src = 'imagens/'+secondCharacter+'.gif';
 
@@ -68,7 +68,20 @@ const checkCards = () => {
 
 
     if (firstCharacter == secondCharacter) {
+
+        firstCard.querySelector('.success-img').style.display = 'block';
+        secondCard.querySelector('.success-img').style.display = 'block';
+        firstCard.querySelector('.gif-card').style.display = 'none';
+        secondCard.querySelector('.gif-card').style.display = 'none';
+
+        //firstCardImg.src = 'teste.jpg';
+        //secondCardImg.src = 'caminho/para/imagem-de-acerto.jpg';
+
         document.getElementById('segundaCartaImg').style.display = 'none';
+
+
+        //document.querySelector('.success-img').style.display = 'block'; // Exibe a imagem de sucesso
+
 
         textoNotificacao.style.color ="green";   
         textoNotificacao.innerText = "Você acertou, parabéns!";
@@ -137,6 +150,8 @@ const createrCard = (character) => {
 
     //front.style.backgroundImage = `url('imagens/${character}.jpg.jpeg')`;
     front.innerHTML = `<img class="gif-card" src="imagens/${character}.gif" alt="${character}" />`;
+    //front.innerHTML = `<img class="success-img" src="imagens/teste.jpg" alt="Sucesso" style="display: none;" />`;
+    front.innerHTML += `<img class="success-img" src="imagens/teste.jpg" alt="Sucesso" style="display: none; width: -webkit-fill-available;" />`;
 
     card.appendChild(front);
     card.appendChild(back);
@@ -171,21 +186,20 @@ const startTime = () => {
 }
 
 window.onload = () => {
-    spanPlayer.innerHTML = localStorage.getItem('player');
-    spanMusica.innerHTML = 'Chicken Dance';
-    startTime();
+    const loadingScreen = document.getElementById('loading-screen');
     loadGame();
+
+     // Oculta a tela de carregamento após 3 segundos (3000 milissegundos)
+    setTimeout(() => {
+        loadingScreen.style.display = 'none';
+        spanPlayer.innerHTML = localStorage.getItem('player');
+        spanMusica.innerHTML = 'Chicken Dance';
+        startTime();
+        audioPlayer.src = 'musica-galinha.mp3';
+        audioPlayer.loop = true;
+        audioPlayer.style.display = 'block';
+        audioPlayer.play();
+    }, 1000);
+
+
 }
-
-
-
-/*
-function pausarGif(carta) {
-    var img = carta.querySelector(firstCharacter);
-
-    // Substituir o GIF pela imagem estática
-    img.src = img.getAttribute('imagens/teste.jpg');
-
-}
-
-*/
