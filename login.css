@@ -137,7 +137,7 @@ ul li:nth-child(1) a::before {
     border-bottom: 4px solid #dc2743;
 }
 ul li:nth-child(2) a::before {
-    content: "\f232";
+    content: "\f27a";
     color: #dc2743;
     border-bottom: 4px solid #dc2743;
 }
